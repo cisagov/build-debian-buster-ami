@@ -9,6 +9,7 @@ configurations for building a Debian Buster AMI from scratch.
 ## Prerequisites ##
 
 A Linux host machine with the following installed:
+
 * [Hashicorp Packer](https://www.packer.io/)
 * [QEMU](https://www.qemu.org/)
 * [AWS CLI](https://aws.amazon.com/cli/)
@@ -40,7 +41,7 @@ This complicates matters, since ideally we would:
    containing the raw Debian Buster image.
 3. Use the AWS CLI to register a new Debian Buster AMI from the EBS
    volume.
-   
+
 Since that isn't possible, and there is no Debian Buster AMI publicly
 available in AWS, we have to instead:
 
