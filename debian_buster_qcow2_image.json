@@ -1,23 +1,22 @@
 {
-    "builders":
-    [
-        {
-            "type": "qemu",
-            "boot_command": [
-                "<esc>auto url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/debian-buster-ami-preseed.txt<enter><wait>"
-            ],
-            "boot_wait": "5s",
-            "http_directory": ".",
-            "iso_checksum": "f31779fcca35f5ce9833a9661a9bd5bd",
-            "iso_checksum_type": "md5",
-            "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.0.0-amd64-netinst.iso",
-            "memory": 1024,
-            "output_directory": "output",
-            "shutdown_command": "echo 'packer' | sudo --stdin shutdown --poweroff now",
-            "ssh_password": "insecure",
-            "ssh_timeout": "20m",
-            "ssh_username": "debian",
-            "vm_name": "debian_buster.qcow2"
-        }
-    ]
+  "builders": [
+    {
+      "boot_command": [
+        "<esc>auto url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/debian-buster-ami-preseed.txt<enter><wait>"
+      ],
+      "boot_wait": "5s",
+      "http_directory": ".",
+      "iso_checksum": "f31779fcca35f5ce9833a9661a9bd5bd",
+      "iso_checksum_type": "md5",
+      "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.0.0-amd64-netinst.iso",
+      "memory": 1024,
+      "output_directory": "output",
+      "shutdown_command": "echo 'packer' | sudo --stdin shutdown --poweroff now",
+      "ssh_password": "insecure",
+      "ssh_timeout": "20m",
+      "ssh_username": "debian",
+      "type": "qemu",
+      "vm_name": "debian_buster.qcow2"
+    }
+  ]
 }
